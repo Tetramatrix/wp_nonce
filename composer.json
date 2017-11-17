@@ -1,19 +1,37 @@
 {
-    "name": "wp_nonce",
-    "description": "wp_nonce Composer project",
+    "name": "installer",
+    "description": "wp_nonce composer project",
     "authors": [
         {
             "name": "xxx",
             "email": "xxx@gmail.com"
         }
     ],
-     "extra" : {
-          "installer-paths" : {
-               "wp-content/plugins/{$name}/" : ["type:wordpress-plugin"]
+    "repositories" : [
+         {
+               "type" : "package",
+		"package": {
+			"name" : "wp_nonce",
+                        "version" : "dev-master",
+			"source" : {
+               			"url" : "https://github.com/Tetramatrix/wp_nonce.git",
+				"type": "git",
+				"reference": "master"
+			}
+		}
           }
-    },
+     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.4" 
-    } 
+        "php": ">=5.4",
+        "wp_nonce": "master" 
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php -r \"system('mv '.getcwd().'/vendor/wp_nonce '.getcwd().'/wp-content/plugins/');\""
+        ],
+        "post-update-cmd": [
+            "php -r \"system('mv '.getcwd().'/vendor/wp_nonce '.getcwd().'/wp-content/plugins/');\""
+        ]
+    }
 }
