@@ -7,20 +7,6 @@
             "email": "xxx@gmail.com"
         }
     ],
-    "repositories" : [
-         {
-               "type" : "package",
-		"package": {
-			"name" : "wp_nonce",
-                        "version" : "dev-master",
-			"source" : {
-               			"url" : "https://github.com/Tetramatrix/wp_nonce.git",
-				"type": "git",
-				"reference": "master"
-			}
-		}
-          }
-     ],
      "extra" : {
           "installer-paths" : {
                "wp-content/plugins/{$name}/" : ["type:wordpress-plugin"]
