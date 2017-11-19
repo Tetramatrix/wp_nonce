@@ -14,6 +14,7 @@ Copy composer.json to Wordexpress folder and type php php-composer install. In W
 
 
 Changelog
+
 19.11.17 Initial release
 
 
